@@ -1,0 +1,13 @@
+<div class="container-result">
+  <div class="officers-details">
+    <div class="header mb-4">
+      <h4 class="title">{{ companyDetails.name | uppercase }} - OFFICERS</h4>
+      <div class="contact-info">
+        Company number
+        <span class="contact-number">{{ companyDetails.id }}</span>
+      </div>
+    </div>
+
+    <app-officers-list [officersList]="officersResult"></app-officers-list>
+  </div>
+</div>

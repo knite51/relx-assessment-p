@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+.container-result {
+  padding: 32px 25px;
+}
+
+.header {
+  .title,
+  .name {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  .contact-info {
+    .contact-number {
+      font-weight: 600;
+    }
+  }
+}

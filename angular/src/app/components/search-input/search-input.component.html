@@ -1,0 +1,29 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="text-center input-width">
+    <form>
+      <div class="mb-3">
+        <label
+          for="company-input"
+          class="form-label visually-hidden"
+          aria-label="Company Name or Number"
+          >Company Name or Number</label
+        >
+        <input
+          class="form-control company-input"
+          id="company-input"
+          placeholder="Company Name or Number"
+          type="text"
+          [formControl]="searchQuery"
+          (keydown.enter)="onSearch()"
+        />
+      </div>
+    </form>
+    <button
+      class="btn btn-secondary btn-search"
+      (click)="onSearch()"
+      [disabled]="searchQuery.invalid"
+    >
+      Search
+    </button>
+  </div>
+</div>

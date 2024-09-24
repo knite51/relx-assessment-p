@@ -1,0 +1,43 @@
+<div class="container-result">
+  <div class="header mb-4">
+    <h4 class="title">SEARCH RESULTS</h4>
+  </div>
+
+  <div class="content">
+    @for (company of companiesResult | paginate: { itemsPerPage: 5, currentPage:
+    page, totalItems: totalItems } ; track $index) {
+
+    <div class="item mt-3">
+      <a class="button name" (click)="selectCompany(company)">{{
+        company.title
+      }}</a>
+      <div class="contact">
+        <span class="number">{{ company.company_number }}</span> -
+        {{ formatDescription(company.description) }}
+      </div>
+      <div>{{ company.address_snippet }}</div>
+    </div>
+    } @empty { @for (count of [1,2,3,4,5] ; track $index) {
+
+    <div class="item mt-3">
+      <div class="skeleton skeleton-title"></div>
+      <div class="contact">
+        <div class="skeleton skeleton-number"></div>
+        <div class="skeleton skeleton-description"></div>
+      </div>
+      <div class="skeleton skeleton-address"></div>
+    </div>
+    } }
+
+    <div class="mt-5">
+      <pagination-controls
+        class="text-center"
+        [autoHide]="true"
+        [responsive]="true"
+        (pageChange)="onPageChange((page = $event))"
+        (pageBoundsCorrection)="onPageChange((page = $event))"
+      >
+      </pagination-controls>
+    </div>
+  </div>
+</div>

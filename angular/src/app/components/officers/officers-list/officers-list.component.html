@@ -1,0 +1,17 @@
+@for (officer of officersList; track $index) {
+<div class="officers">
+  <div class="mb-3">
+    <div class="title">{{ officer.name }}</div>
+    <p class="text">{{ officer.officer_role | titlecase }}</p>
+  </div>
+</div>
+} @empty { @for (count of [1,2,3,4,5] ; track $index) {
+
+<div class="officers">
+  <div class="mb-3">
+    <div class="skeleton skeleton-title"></div>
+
+    <p class="skeleton skeleton-text"></p>
+  </div>
+</div>
+} }
